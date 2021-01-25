@@ -6,7 +6,8 @@ import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -21,8 +22,9 @@ public class AppTest
     @Before
     public void setUp(){
         System.out.println("Iniciando configuración...");
-        System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
-        driver = new ChromeDriver();
+        //System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
+        System.setProperty("webdriver.gecko.driver","drivers/geckodriver"); // Setting system properties of FirefoxDriver
+        driver = new FirefoxDriver();
         driver.get("https://www.amazon.com");
         driver.manage().window().maximize();
         System.out.println(driver.getCurrentUrl());
